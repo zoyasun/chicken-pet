@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "電子寵物",
-    "version": "0.2",
+    "version": "0.3",
     "description": "在螢幕底部顯示一個電子寵物，無論切換什麼頁面。",
     "permissions": ["activeTab"],
     "content_scripts": [
