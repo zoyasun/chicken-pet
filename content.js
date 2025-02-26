@@ -8,11 +8,11 @@ if (!document.getElementById('pet-container')) {
   
     // 添加電子寵物圖像
     const petImage = document.createElement('img');
-    petImage.src = chrome.runtime.getURL('pet.png');
+    petImage.src = chrome.runtime.getURL('/gif/Rooster.gif');
     petImage.alt = 'pet';
     petImage.style.width = '100px';
     petImage.style.height = '100px';
-    petImage.style.transform = 'scaleX(-1)'; // 預設朝右
+    petImage.style.transform = 'scaleX(1)'; // 預設朝右
     petImage.style.transition = 'transform 0.2s';
     petContainer.appendChild(petImage);
   
@@ -24,7 +24,7 @@ if (!document.getElementById('pet-container')) {
       const currentLeft = petContainer.offsetLeft;
       if (currentLeft >= window.innerWidth - 100 || currentLeft <= 0) {
         direction *= -1;
-        petImage.style.transform = `scaleX(${-direction})`; // 翻轉圖片
+        petImage.style.transform = `scaleX(${direction})`; // 翻轉圖片
       }
       petContainer.style.left = `${currentLeft + (direction * speed)}px`;
     }, 20);
