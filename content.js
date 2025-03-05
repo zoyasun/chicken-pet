@@ -1,10 +1,18 @@
 var feedposition = [];
 
 // 檢查是否已經添加過電子寵物
-if (!document.getElementById('pet-container')) {
+(function() { //  使用 IIFE 包裹程式碼的開始
     // 創建容器
     const petContainer = document.createElement('div');
     petContainer.id = 'pet-container';
+
+    petContainer.style.position = 'fixed';
+    petContainer.style.bottom = '0';
+    petContainer.style.left = '50%';
+    petContainer.style.transform = 'translateX(-50%)';
+    petContainer.style.zIndex = '9999';
+
+
     document.body.appendChild(petContainer);
   
     // 添加電子寵物圖像
@@ -19,7 +27,7 @@ if (!document.getElementById('pet-container')) {
   
     console.log("ready to motion");
     motion(petContainer, petImage);
-}
+})(); // 使用 IIFE 包裹程式碼的結束
 
 function motion(divin, imgin){
 console.log("enter motion");
